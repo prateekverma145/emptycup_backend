@@ -6,7 +6,10 @@ require('dotenv').config();
 const designersRoute = require('./routes/designers');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://emptycup-frontend-jbba.vercel.app',
+  credentials: true
+}));
 app.use(express.json());
 
 app.use('/api', designersRoute);
